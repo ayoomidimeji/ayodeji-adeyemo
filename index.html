@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayodeji Samuel Adeyemo | Web Developer</title>
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AS</div>
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm Ayodeji</h1>
+            <div class="typewriter" id="typewriter">
+                <span id="typeText"></span><span class="cursor"></span>
+            </div>
+            <p class="tagline">"Turning Data Insights into Digital Experiences."</p>
+            <a href="./assets/Adeyemo_Ayodeji.pdf" class="cta-button" download>Download Resume</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Data-Driven Developer</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a dedicated professional with a background in data analysis and finance, now channeling my analytical mindset into building modern web experiences. My journey into technology is fueled by a desire to merge data-driven thinking with interactive design.</p>
+                <p style="margin-top: 1.5rem;">With expertise in analyzing complex datasets and translating insights into actionable solutions, I bring a unique perspective to web development. Every line of code I write is informed by precision, logic, and a commitment to creating seamless user experiences.</p>
+            </div>
+            <div class="profile-image">
+                <img src="./assets/profile_img.jpg" alt="Ayodeji Samuel Adeyemo profile picture">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Building the Future, One Project at a Time</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Modern Web Calculator</h3>
+                <p>A sophisticated calculator built with pure JavaScript featuring tokenization, regex parsing, and a custom PEMDAS operation handler. Includes a dual-screen display for input and results, demonstrating advanced logic design and attention to computational accuracy.</p>
+                <div class="project-links">
+                    <a href="https://modern-calculator-gfrm.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <a href="https://github.com/highcon1/modern-calculator.git" class="project-link" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>React E-commerce Page</h3>
+                <p>A dynamic e-commerce interface featuring real-time cart management, product listings, and responsive design. Built with React to showcase modern component architecture, state management, and clean UI principles that prioritize user experience.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <a href="https://github.com/highcon1/e-commerce_bakery-page.git" class="project-link" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills & Tools</h2>
+        <p class="section-subtitle">Technical Arsenal</p>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <span>🌐</span>
+                <p>HTML5</p>
+            </div>
+            <div class="skill-item">
+                <span>🎨</span>
+                <p>CSS3</p>
+            </div>
+            <div class="skill-item">
+                <span>⚡</span>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <span>⚛️</span>
+                <p>React</p>
+            </div>
+            <div class="skill-item">
+                <span>🔀</span>
+                <p>Git</p>
+            </div>
+            <div class="skill-item">
+                <span>📊</span>
+                <p>Power BI</p>
+            </div>
+            <div class="skill-item">
+                <span>📈</span>
+                <p>Excel</p>
+            </div>
+            <div class="skill-item">
+                <span>📉</span>
+                <p>R</p>
+            </div>
+            <div class="skill-item">
+                <span>🗄️</span>
+                <p>SQL</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Ready to Build Something Amazing</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:deji.sammy@gmail.com">deji.sammy@gmail.com</a></p>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ayodeji Samuel Adeyemo. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

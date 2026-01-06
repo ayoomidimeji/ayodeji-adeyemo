@@ -118,7 +118,8 @@
             <a href="./assets/Adeyemo_Ayodeji.pdf" class="cta-button" download>Download Resume</a>
         </div>
         <div class="scroll-indicator">
-            <span></span>
+            <!-- <span class="scroll-text">SCROLL</span> -->
+            <div class="scroll-line"></div>
         </div>
     </section>
 
@@ -167,6 +168,17 @@
                         target="_blank" rel="noopener noreferrer">GitHub Repo</a>
                 </div>
             </div>
+            <div class="project-card">
+                <h3>L'Riyu — Luxury Footwear E-commerce</h3>
+                <p>A premium handcrafted footwear platform blending traditional Italian craftsmanship with modern
+                    design. Features a seamless shopping experience with real-time cart functionality, responsive
+                    product showcases, and a curated brand narrative tailored for the modern gentleman.</p>
+                <div class="project-links">
+                    <a href="https://lariyu.vercel.app/" class="project-link" target="_blank"
+                        rel="noopener noreferrer">View Project</a>
+                    <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -191,6 +203,14 @@
                 <p>React</p>
             </div>
             <div class="skill-item">
+                <span>🚀</span>
+                <p>Next.js</p>
+            </div>
+            <div class="skill-item">
+                <span>🛡️</span>
+                <p>TypeScript</p>
+            </div>
+            <div class="skill-item">
                 <span>🔀</span>
                 <p>Git</p>
             </div>
@@ -209,6 +229,22 @@
             <div class="skill-item">
                 <span>🗄️</span>
                 <p>SQL</p>
+            </div>
+            <div class="skill-item">
+                <span>🍃</span>
+                <p>MongoDB</p>
+            </div>
+            <div class="skill-item">
+                <span>🚂</span>
+                <p>Express.js</p>
+            </div>
+            <div class="skill-item">
+                <span>🌩️</span>
+                <p>Supabase</p>
+            </div>
+            <div class="skill-item">
+                <span>🟢</span>
+                <p>Node.js</p>
             </div>
         </div>
     </section>
@@ -240,7 +276,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Ayodeji Samuel Adeyemo. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Ayodeji Samuel Adeyemo. All rights reserved.</p>
         <div class="footer-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -248,6 +284,18 @@
             <a href="#contact">Contact</a>
         </div>
     </footer>
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span>↑</span>
+    </a>
+
+    <!-- Success Toast Notification -->
+    <div id="successToast" class="toast">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <p>Message sent successfully!</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

@@ -14,6 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = newTheme === "light" ? "🌙" : "☀️";
   });
 
+  // Update Copyright Year
+  const yearSpan = document.getElementById("currentYear");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
   const phrases = [
     "An Aspiring Web Developer",
     "Transitioning from Data Analysis to Tech",
@@ -78,72 +84,88 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById("navMenu");
 
   if (mobileToggle) {
-      mobileToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-      });
+    mobileToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
   }
 
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
 
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const message = messageInput.value.trim();
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
 
-        if (!name || !email || !message) {
-          alert("Please fill in all fields.");
-          return;
+      if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // AJAX Form Submission
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: {
+          'Accept': 'application/json'
         }
+      }).then(response => {
+        if (response.ok) {
+          // Show Success Toast
+          const toast = document.getElementById("successToast");
+          toast.classList.add("show");
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          // Reset form
+          contactForm.reset();
 
-        if (!emailRegex.test(email)) {
-          alert("Please enter a valid email address.");
-          return;
+          // Hide Toast after 4 seconds
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 4000);
+        } else {
+          alert("Oops! There was a problem submitting your form. Please try again.");
         }
-
-        // If validation passes, submit the form
-        // Since we prevented default, we need to manually submit or use fetch
-        // For Formspree, we can just let it submit if we didn't prevent default,
-        // but since we did for validation, we can submit it now.
-        contactForm.submit(); 
-        
-        // Ideally with Formspree AJAX:
-        /*
-        fetch(contactForm.action, {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                alert("Thank you for your message! I will get back to you soon.");
-                contactForm.reset();
-            } else {
-                alert("Oops! There was a problem submitting your form");
-            }
-        }).catch(error => {
-            alert("Oops! There was a problem submitting your form");
-        });
-        */
+      }).catch(error => {
+        alert("Oops! There was a problem submitting your form. Please check your connection.");
       });
+    });
   }
 
   const scrollIndicator = document.querySelector(".scroll-indicator");
   if (scrollIndicator) {
-      scrollIndicator.addEventListener("click", () => {
-        document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
-      });
+    scrollIndicator.addEventListener("click", () => {
+      document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+    });
   }
-});
 
-document.querySelector(".scroll-indicator").addEventListener("click", () => {
-  document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+  const backToTop = document.getElementById("backToTop");
+  if (backToTop) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    });
+
+    backToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
 });
